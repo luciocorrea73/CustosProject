@@ -1,16 +1,16 @@
 @charset "UTF-8"
-
-body.main{
-    background-color: rgb(90, 102, 98);
-}
-
-main > h1{
-    margin: auto;
-}
-
-* {
+*{
     margin: 0px;
     padding: 0px;
+}
+
+body{
+    background-color: rgb(212, 233, 226);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
 }
 
 .pneus {
@@ -23,6 +23,6 @@ main > h1{
     background-color: rgb(169, 174, 241);
 }
 
-.footer{
-    margin: auto;
+footer{
+    text-align: center;
 }
