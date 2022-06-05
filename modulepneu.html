@@ -10,13 +10,24 @@
             var totkmsnovo = parseInt(document.getElementById('rodadopneunovo').value);
             var totkmsrecapado = parseInt(document.getElementById('rodadopneurecapado').value);
             var totrecape = parseInt(document.getElementById('quantidaderecape').value);
+            var kmrotacheia = parseInt(document.getElementById('kmrota').value);
             totkms = totkmsnovo + (totkmsrecapado*totrecape);
             document.getElementById('quantidadetotalkms').value = totkms;
             precokmpneu = preconovo / totkms;
             document.getElementById('custokmpneu').value = precokmpneu;
-
+            custoeixo = precokmpneu * 4;
+            document.getElementById('custoporeixo').value = custoeixo;
+            custo4eixo = custoeixo * 4;
+            document.getElementById('retornovazio').value = custo4eixo;
+            custo6eixo = custoeixo * 6;
+            document.getElementById('custopneucheio').value = custo6eixo;
+            rotacheia = custo6eixo * kmrotacheia;
+            document.getElementById('custorotacarregado').value = rotacheia;
+            rotaretornovazio = custo4eixo * parseInt(document.getElementById('kmrota').value);
+            document.getElementById('custorotavazio').value = rotaretornovazio;
+            finalizadorpneus = rotacheia + rotaretornovazio;
+            document.getElementById('finalpneus').value = finalizadorpneus;
         }
-
     </script>
     <title>Custos Pneus</title>
 </head>
@@ -33,20 +44,31 @@
         <input type="text" name="kmpneurecapado" id="rodadopneurecapado" placeholder="Digite o Km de um Pneu Recapado"><br>
         <label>Quantidade Recapes</label>
         <input type="text" name="qrecapes" id="quantidaderecape" placeholder="Digite a quantidade de recapagens esperada"><br>
+        <label>Kilometragem Rota</label>
+        <input type="text" name="rota" id="kmrota" placeholder="Digite o Km Total Rota">
         </fieldset>
 
         <fieldset id="resultados"><legend>Resultados</legend>
         <label>Total de Kilometros Rodados por Pneu</label>
         <input type="text" name="totalkms" id="quantidadetotalkms" placeholder="Total Kms Pneu" readonly/><br>
         <label>Custo Pneu Por Km/Rodado </label>
-        <input type="text" name="custopneus" id="custokmpneu" placeholder="Custo por Km" readonly/><br>
-       
-        Custo Km Pneu
-        Custo Eixo
-        Custo 4 Eixos
-        Custo 6 Eixos
+        <input type="text" name="custopneus" id="custokmpneu" placeholder="Custo por Km" readonly /><br>
+        <label>Custo Por Eixo</label>
+        <input type="text" name="custoeixo" id="custoporeixo" placeholder="Custo por Eixo" readonly /><br>
+        <label>Custo 4 Eixos</label>
+        <input type="text" name="custovazio" id="retornovazio" placeholder="Custo Retorno Vazio" readonly /><br>
+        <label>Custo 6 Eixos</label>
+        <input type="text" name="custocarregado" id="custopneucheio" placeholder="Custo Cheio" readonly /><br>
         </fieldset>
 
+        <fieldset id="resultadorota"><legend>Resultado para a Rota</legend>
+        <label>Custo Rota Ida Cheio</label>
+        <input type="text" name="rotacarregada" id="custorotacarregado" placeholder="Custo Ida Carregado" readonly /><br>
+        <label>Custo Rota Retorno Vazio (4 eixos)</label>
+        <input type="text" name="retornovazio" id="custorotavazio" placeholder="Custo Retorno Vazio" readonly /><br>
+        <label>Custo Total Pneus</label>
+        <input type="text" name="totalpneus" id="finalpneus" placeholder="Custo Retorno Vazio" readonly /><br>
+        </fieldset>
     </form>
 
 
