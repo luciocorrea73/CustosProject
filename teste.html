@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Untitled</title>
+
+<script language="javascript" type="text/javascript">
+<!--//
+function calcula(){
+    valor1 = document.getElementById('vl1').value;
+    valor2 = document.getElementById('vl2').value;
+    resultado = document.getElementById('vl3');
+    resultado.value = parseFloat(valor1) - parseFloat(valor2);
+}
+//-->
+</script>
+
+</head>
+<body>
+
+<input type="text" id="vl1" name="valor1" value="0" onClick="this.value='';" onBlur="javascript:calcula();" />
+<input type="text" id="vl2" name="valor2" value="0" onClick="this.value='';" onBlur="javascript:calcula();" />
+<input type="text" id="vl3" name="valor1-valor2" value="0" readonly="readonly" />
+
+</body>
+</html>
